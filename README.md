@@ -1,48 +1,57 @@
-# Front-End: Gestão de Usuários (Flutter Web)
+# 🚀 Projeto Front-end - Desenvolvimento Móvel
 
-Este repositório contém o código-fonte da aplicação front-end desenvolvida em **Flutter (focada na plataforma Web)**. O projeto tem como objetivo principal consumir uma API RESTful local, fornecendo uma interface gráfica interativa para a gestão de usuários.
+Este repositório contém a implementação do **Front-end** desenvolvido para a disciplina de **OPT-120 Desenvolvimento Móvel**. A aplicação foi construída em **Flutter Web** e consome uma API RESTful responsável pelo gerenciamento de usuários.
 
-## 🚀 Funcionalidades (CRUD)
+## 📌 Sobre o Projeto
 
-A aplicação gerencia o estado da interface e realiza requisições HTTP (`http` package) para entregar as seguintes funcionalidades:
-- **C (Create):** Tela de formulário para cadastro de novos usuários (POST).
-- **R (Read):** Listagem dinâmica dos usuários cadastrados no banco de dados (GET).
-- **U (Update):** Tela de edição preenchida dinamicamente para atualizar dados (PUT).
-- **D (Delete):** Exclusão de registros diretamente da lista, com diálogo de confirmação (DELETE).
-- **Tratamento de Erros:** Feedback visual (SnackBars) para sucesso, falhas de validação e erros de conexão (ex: servidor offline).
+O objetivo principal deste projeto é fornecer uma interface visual moderna e interativa para o gerenciamento de usuários. A aplicação se comunica com um back-end para realizar operações de CRUD (Create, Read, Update, Delete).
 
-## 📂 Estrutura de Arquivos
+### 🛠️ Tecnologias Principais
+* **Framework:** Flutter Web
+* **Linguagem:** Dart
+* **Consumo de API:** HTTP (requisições REST)
+* **Finalidade:** Interface para interação com a API de usuários
+* **Arquitetura:** Cliente Web consumindo API RESTful
 
-O código-fonte principal está centralizado no diretório `lib/`:
+---
 
-```text
-front_usuarios/
-├── lib/
-│   ├── main.dart             # Ponto de entrada (Menu Principal e rotas)
-│   ├── tela_cadastro.dart    # Lógica e layout do formulário de criação
-│   ├── tela_listagem.dart    # Lógica de listagem e botões de ação (FutureBuilder)
-│   └── tela_edicao.dart      # Lógica e layout do formulário de atualização
-├── pubspec.yaml              # Configurações do projeto e dependências (pacote http)
-└── README.md                 # Documentação do projeto
+## 🏗️ Arquitetura e Integração
+
+O projeto segue o fluxo de comunicação padrão para aplicações web/mobile modernas:
+
+1. O **Frontend (Flutter Web)** realiza requisições HTTP (GET, POST, PUT, DELETE).
+2. O **Back-end (Node.js + Express)** processa as regras de negócio.
+3. Os dados são persistidos no **PostgreSQL**.
+4. A resposta retorna ao front-end para atualização da interface.
+
+---
+
+## 🛠️ Pré-requisitos
+
+Antes de começar, você precisará ter instalado em sua máquina:
+
+* [Flutter](https://docs.flutter.dev/get-started/install) (SDK atualizado)
+* Navegador (Chrome recomendado)
+* Backend rodando (API de usuários)
+
+---
+
+## 🚀 Como rodar o projeto
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/joao-pedro-inoe/front-usuarios-flutter.git
+cd front-usuarios-flutter
 ```
 
-## ⚙️ Como executar o projeto
+### 2. Instalar dependências
 
-### Pré-requisitos
+```bash
+flutter pub get
+```
+### 3. Executar a aplicação
 
-    Flutter SDK instalado e configurado para compilação Web.
-
-    A API de Back-End (Node.js/PostgreSQL) deve estar rodando localmente na porta 3000 (disponível em http://localhost:3000/usuarios).
-
-    O Back-End precisa estar com a política de CORS (Cross-Origin Resource Sharing) ativada.
-
-### Passo a Passo
-
-    Abra o terminal e navegue até a pasta raiz deste projeto 
-
-    Inicie a aplicação utilizando o servidor web local do Flutter: 
-
-    ```bash
-    flutter run -d web-server
-    ```
-    O terminal fornecerá um endereço local (ex: http://localhost:35421). Copie e cole este link no seu navegador.
+ ```bash
+ flutter run -d web-server
+```
